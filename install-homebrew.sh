@@ -6,7 +6,12 @@
 #                    ::homebrew #
 # # by Chaim Eliyah # # # # # # #
 
-# homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# ${homebrew:-install homebrew}
+which -s brew
+if [[ $? != 0 ]] ; then
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
+fi
+
 brew update
 brew upgrade
+# brew doctor # what does it do?

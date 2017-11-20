@@ -7,4 +7,6 @@
 
 brew tap caskroom/drivers
 
+brew cask install logitech-control-center
 brew cask install logitech-unifying
+

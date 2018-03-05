@@ -23,6 +23,15 @@ brew install \
   docker-machine \
   docker-machine-driver-xhyve
 
+if [ $? -ne 0 ]; then
+  brew upgrade \
+    xhyve \
+    docker \
+    docker-compose \
+    docker-machine \
+    docker-machine-driver-xhyve
+fi
+
 # normal docker shit: docker-machine owned by root:wheel and set user id on execution (mac os x thing: https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/chmod.1.html)
 sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
 sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve

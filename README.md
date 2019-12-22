@@ -22,3 +22,4 @@ Good job. You follow instructions.
 #### setup-ssh-key.sh
 This should, given an email, setup an SSH key for you to use with GitHub.
 It will prompt you for a password.
+DEPRECATED
